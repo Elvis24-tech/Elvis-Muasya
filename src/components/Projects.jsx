@@ -1,105 +1,136 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: 'Farmart',
-    description: 'An e-commerce platform for farm animals. Built with React, Django, and PostgreSQL. Features include buyer/farmer dashboards, M-Pesa integration, authentication, and cart system.',
-    tech: ['React', 'Django', 'PostgreSQL', 'Firebase', 'M-Pesa'],
-    link: 'https://farmart-iota.vercel.app/',
+    title: "Farmart",
+    description:
+      "Modern farm animal marketplace with authentication, dashboards, M-Pesa integration, and advanced cart system.",
+    tech: ["React", "Django", "PostgreSQL", "Firebase"],
+    link: "https://farmart-iota.vercel.app/",
   },
   {
-    title: 'Beauty Shop',
-    description: 'A modern beauty products shop with admin management, Google login, M-Pesa payment, and responsive design.',
-    tech: ['React', 'Tailwind CSS', 'Firebase', 'Django REST', 'M-Pesa'],
-    link: 'https://github.com/Elvis24-tech/Cosmetics',
+    title: "Beauty Shop",
+    description:
+      "Premium beauty e-commerce platform with Google auth, admin dashboard, and payment integration.",
+    tech: ["React", "Tailwind", "Firebase", "Django"],
+    link: "https://github.com/elvis24-tech/beauty-shop",
   },
   {
-    title: 'Hope Connect',
-    description: 'A community-based platform connecting volunteers and donors to those in need. Real-time requests, donor dashboard, and SMS notifications.',
-    tech: ['React', 'Django', 'SQLite', 'Tailwind CSS'],
-    link: 'https://hope-connect-two.vercel.app/',
-  },
-  {
-    title: 'Pocket Pantry',
-    description: 'A smart pantry tracker app that helps users manage groceries, track expiry dates, and generate smart shopping lists.',
-    tech: ['Flask', 'Python', 'SQLite', 'Tailwind CSS'],
-    link: 'https://nakara4.github.io/POCKET-PANTRY2/',
-  },
-];
-
-const cardColors = [
-  {
-    bg: 'bg-blue-100',
-    border: 'border-blue-800',
-    text: 'text-blue-800',
-    tagBg: 'bg-blue-100',
-    tagText: 'text-blue-800',
-    link: 'text-blue-600',
-  },
-  {
-    bg: 'bg-pink-100',
-    border: 'border-pink-800',
-    text: 'text-pink-800',
-    tagBg: 'bg-pink-100',
-    tagText: 'text-pink-800',
-    link: 'text-pink-600',
-  },
-  {
-    bg: 'bg-green-100',
-    border: 'border-green-800',
-    text: 'text-green-800',
-    tagBg: 'bg-green-100',
-    tagText: 'text-green-800',
-    link: 'text-green-600',
-  },
-  {
-    bg: 'bg-yellow-100',
-    border: 'border-yellow-800',
-    text: 'text-yellow-800',
-    tagBg: 'bg-yellow-100',
-    tagText: 'text-yellow-800',
-    link: 'text-yellow-600',
+    title: "Hope Connect",
+    description:
+      "Community support platform connecting volunteers and donors with real-time interaction features.",
+    tech: ["React", "Django", "Tailwind"],
+    link: "https://hopeconnect-ngo.vercel.app/",
   },
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="bg-white py-24 px-6">
-      <h2 className="text-4xl font-extrabold text-center text-blue-700 mb-12">My Projects</h2>
-      <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto">
-        {projects.map((project, idx) => {
-          const colors = cardColors[idx % cardColors.length];
-          return (
-            <div
-              key={idx}
-              className={`${colors.bg} border ${colors.border} rounded-2xl shadow-sm hover:shadow-xl transition-all p-6 flex flex-col justify-between`}
+    <section
+      id="projects"
+      className="py-32 px-6"
+    >
+
+      <div className="max-w-7xl mx-auto">
+
+        <div className="text-center mb-20">
+
+          <p className="uppercase tracking-[0.4em] text-cyan-400 text-sm mb-4">
+            Portfolio
+          </p>
+
+          <h2 className="text-5xl md:text-6xl font-black">
+            Featured Projects
+          </h2>
+
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              whileHover={{
+                y: -10,
+              }}
+              className="
+                group
+                relative
+                bg-white/5
+                border
+                border-white/10
+                backdrop-blur-2xl
+                rounded-[2rem]
+                overflow-hidden
+                transition-all
+                duration-500
+              "
             >
-              <div>
-                <h3 className={`text-2xl font-bold mb-2 ${colors.text}`}>{project.title}</h3>
-                <p className="text-gray-700 text-base">{project.description}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
+
+              <div className="h-56 bg-gradient-to-br from-cyan-500/20 via-blue-500/20 to-purple-500/20 flex items-center justify-center text-3xl font-black">
+
+                {project.title}
+
+              </div>
+
+              <div className="p-8">
+
+                <h3 className="text-3xl font-bold mb-4">
+                  {project.title}
+                </h3>
+
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-3 mb-8">
+
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className={`text-sm ${colors.tagBg} ${colors.tagText} px-3 py-1 rounded-full font-medium`}
+                      className="
+                        px-4
+                        py-2
+                        rounded-full
+                        bg-white/5
+                        border
+                        border-white/10
+                        text-sm
+                      "
                     >
                       {tech}
                     </span>
                   ))}
+
                 </div>
+
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex
+                    items-center
+                    gap-2
+                    text-cyan-400
+                    hover:gap-4
+                    transition-all
+                    duration-300
+                  "
+                >
+                  View Project →
+                </a>
+
               </div>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`mt-6 font-medium hover:underline ${colors.link}`}
-              >
-                View Project →
-              </a>
-            </div>
-          );
-        })}
+
+            </motion.div>
+          ))}
+
+        </div>
+
       </div>
+
     </section>
   );
 };

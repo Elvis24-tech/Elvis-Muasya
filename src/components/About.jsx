@@ -20,36 +20,37 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative py-32 px-6"
+      className="py-32 px-6"
     >
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
-        {/* LEFT SIDE */}
+        {/* LEFT */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          viewport={{ once: true }}
         >
 
-          <p className="uppercase tracking-[0.3em] text-cyan-400 text-sm mb-4">
+          <p className="uppercase tracking-[0.4em] text-cyan-400 text-sm mb-4">
             About Me
           </p>
 
           <h2 className="text-5xl md:text-6xl font-black leading-tight mb-8">
             Creating Modern
+
             <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
-              Digital Experiences
+              Digital Products
             </span>
+
           </h2>
 
           <p className="text-gray-300 text-lg leading-relaxed mb-8">
-            I’m Elvis Muasya — a passionate fullstack developer
-            focused on building immersive interfaces,
-            scalable backend systems, and visually engaging
-            web applications using React, Tailwind CSS,
-            Django, Flask, Firebase, and modern UI engineering.
+            I build scalable backend systems,
+            immersive frontend experiences,
+            and modern UI interactions using
+            React, Tailwind CSS, Django,
+            Flask, Firebase, and PostgreSQL.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -71,7 +72,6 @@ const About = () => {
                   bg-white/5
                   border
                   border-white/10
-                  backdrop-blur-xl
                   text-sm
                   text-gray-200
                 "
@@ -84,12 +84,11 @@ const About = () => {
 
         </motion.div>
 
-        {/* RIGHT SIDE */}
+        {/* RIGHT */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          viewport={{ once: true }}
           className="
             bg-white/5
             border
@@ -102,15 +101,13 @@ const About = () => {
           "
         >
 
-          {/* Glow */}
           <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl" />
 
           <div className="space-y-8">
 
             {stats.map((stat, index) => (
-              <motion.div
+              <div
                 key={index}
-                whileHover={{ scale: 1.03 }}
                 className="
                   flex
                   items-center
@@ -120,14 +117,16 @@ const About = () => {
                   pb-6
                 "
               >
-                <h3 className="text-5xl font-black text-white">
+
+                <h3 className="text-5xl font-black">
                   {stat.number}
                 </h3>
 
                 <p className="text-gray-400 text-lg">
                   {stat.label}
                 </p>
-              </motion.div>
+
+              </div>
             ))}
 
           </div>
@@ -135,6 +134,7 @@ const About = () => {
         </motion.div>
 
       </div>
+
     </section>
   );
 };
