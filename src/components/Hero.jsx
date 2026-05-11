@@ -62,9 +62,7 @@ const Hero = () => {
 
             <div>
               <p className="text-cyan-400 font-semibold mb-1">Professional Skills</p>
-              <p>
-                Self-Management, Leadership, Emotional Intelligence, Problem Solving, Project Planning
-              </p>
+              <p>Self-Management, Leadership, Emotional Intelligence, Problem Solving, Project Planning</p>
             </div>
 
           </div>
@@ -111,8 +109,13 @@ const Hero = () => {
 
             </div>
 
+            {/* NAME UNDER IMAGE */}
+            <p className="mt-4 text-center text-lg sm:text-xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+              Elvis Muasya
+            </p>
+
             {/* ROLES */}
-            <div className="mt-5 sm:mt-8 flex flex-col items-center gap-3 text-center">
+            <div className="mt-5 sm:mt-6 flex flex-col items-center gap-3 text-center">
 
               <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
 
