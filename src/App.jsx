@@ -4,6 +4,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
+
 function App() {
   return (
     <div className="relative bg-[#050816] text-white overflow-hidden font-sans">
